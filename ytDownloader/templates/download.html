@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+		<div class="thumbnail">
+			<img class="thumbnail-image" src="{{thumbnail}}" alt="Error loading thumnnail">
+		</div>
+
+		<div class="ct">
+			Title: {{title}}
+			<br>
+			By: {{author}}
+			<br>
+			<br>
+			Length: {{length}}
+		</div>
+
+		<div class="ct">
+			Only 144, 360 and 720p include audio
+		</div>
+		
+		<table>
+			<thead>
+				<tr class="table-heading">
+					<th scope="col">Attributes</th>
+					<th scope="col">Download</th>
+				</tr>
+			</thead>
+
+			{% for i in onlyres %}
+
+			<tbody>
+				<tr>
+					<td data-label="Attributes">{{i}}</td>
+					<td data-label="Download">
+						<form action="{% url 'YT-downloader:success' i %}" method="post">
+							{% csrf_token %}
+							<button type="submit" value="Download" class="download-btn">Download</button>
+						</form>
+					</td>
+				</tr>
+
+				{% endfor %}
+
+			</tbody>
+		</table>
+		<br><br><br><br><br><br><br>
+{% endblock %}

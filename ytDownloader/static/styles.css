@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #24252A;
+	font-family: cursive;
+}
+
+li, a, button, .logo {
+	font-family: cursive;
+	font-weight: 500;
+	font-size: 16px;
+	color: whitesmoke;
+	text-decoration: none;
+}
+
+#click {
+	display: none;
+}
+
+header {
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 10%;
+	padding-right: 10%;
+	position: fixed;
+	width: 100vw;
+}
+
+.nav__links {
+	list-style: none;
+}
+
+.nav__links li {
+	display: inline-block;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.nav__links li a {
+	transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover, .active {
+	color: #0088A9;
+}
+
+button {
+	padding-top: 9px;
+	padding-bottom: 9px;
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: rgba(0, 136, 169, 1);
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+button:hover {
+	background-color: rgba(0, 136, 169, 0.8);
+}
+
+.logo {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.menu-btn {
+	color: white;
+	display: none;
+	cursor: pointer;
+	padding-left: 10px;
+}
+
+.cta {
+	display: flex;
+	width: 247px;
+	justify-content: end;
+}
+
+@media (max-width: 900px) {
+	.nav__links {
+		position: fixed;
+		top: 80px;
+		left: -100%;
+		background-color: #24252A;
+		height: 100vh;
+		width: 100%;
+		display: block;
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+
+	.cta {
+		display: inline-flex;
+		position: fixed;
+		bottom: 80px;
+		width: 100vw;
+		left: -100;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+
+
+	#click:not(:checked) ~ .nav__links{
+		left: -100%;
+	}
+	
+	#click:not(:checked) ~ .cta{
+		left: -100%;
+	}
+
+	#click:checked ~ .nav__links {
+		left: 0%;
+	}
+
+	#click:checked ~ .cta{
+		left: 0%;
+	}
+
+	#click:checked ~ .menu-btn i:before {
+		content: "\f00d";
+	}
+
+	.nav__links li {
+		display: block;
+		margin-top: 40px;
+	}
+
+	.menu-btn {
+		display: inline-block;
+	}
+}
+
+.heading {
+	margin-top: 120px;
+	display: flex;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 26px;
+	color: whitesmoke;
+	text-decoration: none;
+	justify-content: center;
+}
+
+#link {
+	display: block;
+	width: 70%;
+	margin-top: 30px;
+	padding:15px;
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+	
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 17px 17px;
+
+	transition: 0.4s ease;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	margin-bottom: 20px;
+}
+
+.search-form button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ct {
+	display: flex;
+	margin-top: 60px;
+	color: whitesmoke;
+	font-size: 20px;
+	justify-content: center;
+}
+
+table {
+	border: 1px solid #ccc;
+	border-radius: 25px;
+	border-collapse: collapse;
+	margin: 0;
+	margin-top: 50px;
+
+	padding: 0;
+	width: 100%;
+	table-layout: fixed;
+      }
+      
+      
+      table tr {
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	padding: .35em;
+	color: whitesmoke;
+      }
+      
+      table th,
+      table td {
+	padding: .625em;
+	text-align: center;
+      }
+      
+      table th {
+	font-size: .85em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+      }
+
+      .table-heading {
+	color: #0088A9;
+      }
+      
+      @media screen and (max-width: 600px) {
+	table {
+	  border: 0;
+	}
+      
+	table caption {
+	  font-size: 1.3em;
+	}
+	
+	table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+	}
+	
+	table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+	  margin-bottom: .625em;
+	}
+	
+	table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  font-size: .8em;
+	  text-align: right;
+	}
+	
+	table td::before {
+	  /*
+	  * aria-label has no advantage, it won't be read inside a table
+	  content: attr(aria-label);
+	  */
+	  content: attr(data-label);
+	  float: left;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	}
+	
+	table td:last-child {
+	  border-bottom: 0;
+	}
+
+	.download-btn {
+		font-size: 10px;
+		
+	}
+
+      }
+
+.thumbnail {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;	
+}
+
+@media (max-width: 700px) {
+	.thumbnail-image {
+		height: 70%;
+		width: 70%;
+	}
+}
+
+h2 {
+	margin: 0;
+	color: #5959FF;
+	font-size: 2.5em;
+	font-weight: 600;
+	margin-top: 5rem;
+      }
+      
+      .forms{
+	width: 50%;
+      }
+      
+      .forms label{
+	font-size: 1.2rem;
+      }
+      
+      .input, textarea, .button {
+	width: 100%;
+	padding: 0.5em;
+	border: none;
+	font-size: 1.2rem;
+	color: white;
+      }
+      input[type="text"], input[type="email"], textarea {
+	margin: 0 0 1em;
+	border: 1px solid #ccc;
+	outline: none;
+      }
+      
+      textarea {
+	height: 6em;
+      }
+      input[type="submit"], button {
+	background: #4570F3;
+	color: #fff;
+	cursor: pointer;
+      }
+      input[type="submit"]:hover, button:hover {
+	background: #6E65F4;
+      }
+label {
+	color: white;
+}
+
+.contact {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}

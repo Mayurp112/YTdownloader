@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+		<div class="heading">
+			Single Music
+		</div>
+		
+		<form action="/download-music/" class="search-form" method="get">
+			<div class="form">
+				<!--<label for="link">Enter Link</label>-->
+				<input type="text" id="link" name="url" placeholder="Enter link here">
+			</div>
+			<button type="submit">Enter</button>
+		</form>
+
+		<div class="heading">
+			Playlist
+		</div>
+		
+		<form action="/download-playlist/" class="search-form" method="get">
+			<div class="form">
+				<!--<label for="link">Enter Link</label>-->
+				<input type="text" id="link" name="url" placeholder="Enter link here">
+			</div>
+			<button id="idk" type="submit">Enter</button>
+		</form>
+		<script>
+			document.getElementById('idk').addEventListener("click", function(){ alert("Download has started pls wait 5-10 mins"); });
+		</script>
+{% endblock %}
